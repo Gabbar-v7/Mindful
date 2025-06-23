@@ -8,8 +8,6 @@
  *
  */
 
-import 'dart:math';
-
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -56,7 +54,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     await Future.delayed(10.seconds);
 
     /// Add randomness (1 out of 10) to skip showing sometimes whenever possible
-    final prob = Random().nextInt(10);
+    final prob = 2;
     debugPrint("Show donation dialog? : ${prob == 1}");
     if (!mounted || prob != 1) return;
 
