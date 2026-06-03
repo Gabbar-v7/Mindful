@@ -42,7 +42,7 @@ class ShortsTimerChart extends ConsumerWidget {
         !ref.read(parentalControlsProvider.notifier).isBetweenInvincibleWindow;
 
     /// Check if restricted by invincible mode
-    if (isInvincibleRestricted && allowedTimeSec > 0) {
+    if (isInvincibleRestricted && allowedTimeSec >= 0) {
       context.showSnackAlert(
         context.locale.invincible_mode_snack_alert,
       );

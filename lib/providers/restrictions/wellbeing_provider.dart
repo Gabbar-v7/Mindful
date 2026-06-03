@@ -74,5 +74,5 @@ class WellBeingNotifier extends StateNotifier<Wellbeing> {
 
   /// Sets the allowed time limit for short content consumption.
   void setAllowedShortContentTime(int timeSec) =>
-      state = state.copyWith(allowedShortsTimeSec: timeSec > 0 ? timeSec : -1);
+      state = state.copyWith(allowedShortsTimeSec: timeSec >= 0 ? timeSec : -1);
 }

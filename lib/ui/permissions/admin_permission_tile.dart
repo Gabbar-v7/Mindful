@@ -10,7 +10,6 @@
 
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mindful/config/hero_tags.dart';
 import 'package:mindful/core/database/adapters/time_of_day_adapter.dart';

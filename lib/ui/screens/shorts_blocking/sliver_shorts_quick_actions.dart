@@ -38,7 +38,7 @@ class SliverShortsQuickActions extends ConsumerWidget {
         !ref
             .read(parentalControlsProvider.notifier)
             .isBetweenInvincibleWindow &&
-        ref.read(wellBeingProvider.select((v) => v.allowedShortsTimeSec > 0));
+        ref.read(wellBeingProvider.select((v) => v.allowedShortsTimeSec >= 0));
 
     /// If restricted by invincible mode
     if (isInvincibleRestricted && blockedFeatures.contains(feature)) {
