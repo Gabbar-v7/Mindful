@@ -14,6 +14,7 @@ Future<void> from6To7(Migrator m, Schema7 schema) async => await runSafe(
         await m.createTable(schema.notificationsTable);
 
         /// Drop [NotificationBatchedApps] column from [SharedUniqueDataTable]
+        // ignore: experimental_member_use
         await m.alterTable(TableMigration(schema.sharedUniqueDataTable));
 
         /// Drop [NotificationScheduleTable]

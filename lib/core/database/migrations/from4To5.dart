@@ -20,6 +20,7 @@ Future<void> from4To5(Migrator m, Schema5 schema) async => await runSafe(
         );
 
         /// Drop old columns from [WellbeingTable]
+        // ignore: experimental_member_use
         await m.alterTable(TableMigration(schema.wellbeingTable));
       },
     );

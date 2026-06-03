@@ -12,6 +12,7 @@ Future<void> from8To9(Migrator m, Schema9 schema) async => await runSafe(
             schema.appRestrictionTable.reminderType);
 
         /// Drop [UsageReminders] column from [AppRestrictionTable]
+        // ignore: experimental_member_use
         await m.alterTable(TableMigration(schema.appRestrictionTable));
       },
     );

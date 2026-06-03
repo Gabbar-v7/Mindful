@@ -100,6 +100,7 @@ Future<void> from3To4(Migrator m, Schema4 schema) async => await runSafe(
         }
 
         /// Drop columns from [MindfulSettingsTable]
+        // ignore: experimental_member_use
         await m.alterTable(TableMigration(schema.mindfulSettingsTable));
 
         /// Drop [InvincibleModeTable]
