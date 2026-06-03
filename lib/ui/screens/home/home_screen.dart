@@ -49,29 +49,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _showDonationDialog());
-  }
-
-  void _showDonationDialog() async {
-    await Future.delayed(10.seconds);
-
-    /// Add randomness (1 out of 10) to skip showing sometimes whenever possible
-    final prob = Random().nextInt(10);
-    debugPrint("Show donation dialog? : ${prob == 1}");
-    if (!mounted || prob != 1) return;
-
-    final isConfirm = await showConfirmationDialog(
-      context: context,
-      heroTag: HeroTags.donationDialogTag,
-      title: context.locale.donation_card_title,
-      info: context.locale.donation_card_info,
-      icon: FluentIcons.handshake_20_regular,
-      positiveLabel: context.locale.donation_card_button_donate,
-    );
-
-    if (!isConfirm) return;
-    MethodChannelService.instance
-        .launchUrl(AppConstants.gitHubDonationSectionUrl);
   }
 
   @override
