@@ -151,16 +151,9 @@ class _ImportExportDbState extends ConsumerState<ImportExportDb> {
 
       /// export to file
       final dbFileBytes = await dbFile.readAsBytes();
-      final timeStamp = DateFormat('yyyy-MM-dThh-mm-ss').format(DateTime.now());
-      final dbVersionCode = DriftDbService.instance.driftDb.schemaVersion;
-      final mindfulVersionCode = MethodChannelService
-          .instance.deviceInfo.mindfulVersion
-          .split("+")
-          .lastOrNull;
 
       final resultPath = await FilePicker.platform.saveFile(
-        fileName:
-            "Mindful_v${mindfulVersionCode}_dbv${dbVersionCode}_$timeStamp.sqlite",
+        fileName: "Mindful (1).sqlite",
         bytes: Uint8List.fromList(dbFileBytes),
       );
 
