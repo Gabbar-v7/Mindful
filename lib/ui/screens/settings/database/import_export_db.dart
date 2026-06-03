@@ -17,7 +17,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 import 'package:mindful/core/enums/item_position.dart';
 import 'package:mindful/core/extensions/ext_build_context.dart';
 import 'package:mindful/core/extensions/ext_widget.dart';
@@ -25,7 +24,6 @@ import 'package:mindful/core/services/drift_db_service.dart';
 import 'package:mindful/core/services/method_channel_service.dart';
 import 'package:mindful/config/hero_tags.dart';
 import 'package:mindful/core/utils/db_utils.dart';
-import 'package:mindful/providers/system/parental_controls_provider.dart';
 import 'package:mindful/providers/system/permissions_provider.dart';
 import 'package:mindful/ui/common/content_section_header.dart';
 import 'package:mindful/ui/common/default_list_tile.dart';
@@ -122,18 +120,7 @@ class _ImportExportDbState extends ConsumerState<ImportExportDb> {
         await originalDbFile.delete();
         await backupFile.copy(originalDbFile.path);
 
-        /// let user know about the restart
-        mounted
-            ? await showCountDownDialog(
-                context: context,
-                heroTag: HeroTags.importDatabaseTileTag,
-                timerDuration: 5.seconds,
-                title: context.locale.app_restart_dialog_title,
-                info: context.locale.app_restart_dialog_info,
-                icon: FluentIcons.arrow_repeat_all_20_filled,
-                onCountDownFinish: MethodChannelService.instance.restartApp,
-              )
-            : await MethodChannelService.instance.restartApp();
+        await MethodChannelService.instance.restartApp();
       } else {
         throw Exception('Backup file does not exist');
       }
