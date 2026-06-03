@@ -143,6 +143,10 @@ class AppLocalizationsJa extends AppLocalizations {
       'デバイス管理アプリの有効化は、選択した時間帯以外では無効にすることができません。';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => '通知へのアクセス';
 
   @override

@@ -149,6 +149,10 @@ class AppLocalizationsKo extends AppLocalizations {
       'Tamper protection can only be disabled during the selected time window.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'Notification Access';
 
   @override

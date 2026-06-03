@@ -139,6 +139,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get permission_admin_snack_alert => '篡改保护只能在选定的时间窗口内禁用。';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => '通知访问';
 
   @override

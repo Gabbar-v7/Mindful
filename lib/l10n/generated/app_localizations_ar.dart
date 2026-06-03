@@ -149,6 +149,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'لا يمكن تعطيل الحماية من العبث إلا خلال فترة زمنية محددة.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'الوصول إلى الإشعارات';
 
   @override

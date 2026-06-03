@@ -150,6 +150,10 @@ class AppLocalizationsEs extends AppLocalizations {
       'La protección contra manipulaciones solo se puede desactivar durante el período de tiempo seleccionado.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'Acceso a Notificaciones';
 
   @override

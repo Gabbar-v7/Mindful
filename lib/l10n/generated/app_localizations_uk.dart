@@ -152,6 +152,10 @@ class AppLocalizationsUk extends AppLocalizations {
       'Захист від несанкціонованого доступу може бути відключений тільки протягом обраного проміжку часу.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'Доступ до сповіщень';
 
   @override

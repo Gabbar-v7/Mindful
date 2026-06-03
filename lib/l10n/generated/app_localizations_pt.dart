@@ -147,6 +147,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'A proteção contra desinstalação só pode ser desativada durante a janela de tempo selecionada.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'Acesso às Notificações';
 
   @override

@@ -390,6 +390,12 @@ abstract class AppLocalizations {
   /// **'Tamper protection can only be disabled during the selected time window.'**
   String get permission_admin_snack_alert;
 
+  /// No description provided for @permission_admin_import_alert.
+  ///
+  /// In en, this message translates to:
+  /// **'Database cannot be updated while tamper protection is enabled.'**
+  String get permission_admin_import_alert;
+
   /// No description provided for @permission_notification_access_title.
   ///
   /// In en, this message translates to:

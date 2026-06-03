@@ -149,6 +149,10 @@ class AppLocalizationsSr extends AppLocalizations {
       'Заштита од манипулација може бити онемогућена само у оквиру изабраног временског периода.';
 
   @override
+  String get permission_admin_import_alert =>
+      'Database cannot be updated while tamper protection is enabled.';
+
+  @override
   String get permission_notification_access_title => 'Приступ обавештењима';
 
   @override
