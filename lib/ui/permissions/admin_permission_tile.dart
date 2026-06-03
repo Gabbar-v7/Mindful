@@ -19,7 +19,6 @@ import 'package:mindful/core/extensions/ext_build_context.dart';
 import 'package:mindful/providers/system/parental_controls_provider.dart';
 import 'package:mindful/providers/system/permissions_provider.dart';
 import 'package:mindful/ui/common/default_list_tile.dart';
-import 'package:mindful/ui/dialogs/confirmation_dialog.dart';
 import 'package:mindful/ui/permissions/accessibility_permission_card.dart';
 import 'package:mindful/ui/permissions/permission_sheet.dart';
 import 'package:mindful/ui/transitions/default_hero.dart';
@@ -52,18 +51,7 @@ class AdminPermissionTile extends ConsumerWidget {
         );
       }
     } else {
-      /// Confirm
-      final isConfirm = await showConfirmationDialog(
-        context: context,
-        heroTag: HeroTags.tamperProtectionTileTag,
-        icon: FluentIcons.shield_keyhole_20_filled,
-        title: context.locale.tamper_protection_tile_title,
-        info: context.locale.tamper_protection_confirmation_dialog_info,
-        positiveLabel: context.locale.permission_button_grant_permission,
-      );
-
-      await Future.delayed(400.ms);
-      if (!isConfirm || !context.mounted) return;
+      if (!context.mounted) return;
 
       /// User wants to Enable
       showModalBottomSheet(
