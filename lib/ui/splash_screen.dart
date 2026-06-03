@@ -20,7 +20,6 @@ import 'package:mindful/core/extensions/ext_build_context.dart';
 import 'package:mindful/core/extensions/ext_num.dart';
 import 'package:mindful/core/services/auth_service.dart';
 import 'package:mindful/config/navigation/navigation_service.dart';
-import 'package:mindful/core/services/method_channel_service.dart';
 import 'package:mindful/providers/system/mindful_settings_provider.dart';
 import 'package:mindful/providers/system/parental_controls_provider.dart';
 import 'package:mindful/providers/system/permissions_provider.dart';
@@ -40,7 +39,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   bool _haveAllEssentialPermissions = false;
   bool _isOnboardingDone = false;
   bool _isAccessProtected = false;
-  bool _isAppUpdated = false;
 
   @override
   void initState() {
@@ -54,8 +52,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
     final settings = await ref.read(mindfulSettingsProvider.notifier).init();
     _isOnboardingDone = settings.isOnboardingDone;
-    _isAppUpdated = settings.appVersion !=
-        MethodChannelService.instance.deviceInfo.mindfulVersion;
 
     _isAccessProtected =
         (await ref.read(parentalControlsProvider.notifier).init())
@@ -74,7 +70,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     if (!mounted) return;
 
     if (_haveAllEssentialPermissions && _isOnboardingDone) {
-      NavigationService.instance.init(showChangeLogsToo: _isAppUpdated);
+      NavigationService.instance.init();
     } else {
       Navigator.of(context).pushReplacementNamed(
         AppRoutes.onboardingPath,

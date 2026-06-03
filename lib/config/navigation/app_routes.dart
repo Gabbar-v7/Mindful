@@ -94,8 +94,8 @@ class AppRoutes {
     /// App dashboard screen
     appDashboardPath: (context) => AppDashboardScreen(
           packageName: context.resolveParam<String>("package") ?? "",
-          initialUsageType:
-              UsageType.values[(context.resolveParam<int>("usageType") ?? 0) % 2],
+          initialUsageType: UsageType
+              .values[(context.resolveParam<int>("usageType") ?? 0) % 2],
           selectedDay: context.resolveParam<DateTime>("day"),
         ),
   };

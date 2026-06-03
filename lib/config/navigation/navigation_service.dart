@@ -37,7 +37,7 @@ class NavigationService {
   ///
   /// Should be called from splash screen after authentication if access is protected
   /// or Onboarding Screen after setup
-  Future<void> init({required bool showChangeLogsToo}) async {
+  Future<void> init() async {
     /// Initialize services after a delay to prevent app from lagging
     Future.delayed(10.seconds, Initializer.initializeServicesAndSchedules);
 
@@ -58,12 +58,6 @@ class NavigationService {
     final initialUri = await _appLinks.getInitialLink();
     if (initialUri == null) {
       await _goToRoute(AppRoutes.homePath, replaceCurrent: true);
-    }
-
-    /// Now push the changelog screen if needed
-    if (showChangeLogsToo) {
-      await Future.delayed(5.seconds);
-      await _goToRoute(AppRoutes.changeLogsPath);
     }
   }
 

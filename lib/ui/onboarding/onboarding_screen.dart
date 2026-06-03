@@ -104,8 +104,7 @@ class _OnboardingState extends ConsumerState<OnboardingScreen> {
         200.ms,
         () {
           if (!mounted) return;
-          NavigationService.instance
-              .init(showChangeLogsToo: !widget.isOnboardingDone);
+          NavigationService.instance.init();
         },
       );
     }

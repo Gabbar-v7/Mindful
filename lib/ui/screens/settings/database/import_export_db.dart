@@ -15,7 +15,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mindful/core/enums/item_position.dart';
 import 'package:mindful/core/extensions/ext_build_context.dart';
@@ -27,7 +26,6 @@ import 'package:mindful/core/utils/db_utils.dart';
 import 'package:mindful/providers/system/permissions_provider.dart';
 import 'package:mindful/ui/common/content_section_header.dart';
 import 'package:mindful/ui/common/default_list_tile.dart';
-import 'package:mindful/ui/dialogs/time_countdown_dialog.dart';
 import 'package:mindful/ui/transitions/default_hero.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
