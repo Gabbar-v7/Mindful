@@ -387,7 +387,7 @@ abstract class AppLocalizations {
   /// No description provided for @permission_admin_snack_alert.
   ///
   /// In en, this message translates to:
-  /// **'Tamper protection can only be disabled during the selected time window.'**
+  /// **'Tamper protection cannot be disabled.'**
   String get permission_admin_snack_alert;
 
   /// No description provided for @permission_admin_import_alert.

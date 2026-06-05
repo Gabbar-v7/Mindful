@@ -148,7 +148,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get permission_admin_snack_alert =>
-      'Tamper protection can only be disabled during the selected time window.';
+      'Tamper protection cannot be disabled.';
 
   @override
   String get permission_admin_import_alert =>
