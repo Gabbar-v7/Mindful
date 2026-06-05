@@ -40,15 +40,9 @@ class AdminPermissionTile extends ConsumerWidget {
 
     if (isAdminEnabled) {
       /// User wants to Disable
-      if (ref
-          .read(parentalControlsProvider.notifier)
-          .isBetweenUninstallWindow) {
-        ref.read(permissionProvider.notifier).disableAdminPermission();
-      } else {
-        context.showSnackAlert(
-          context.locale.permission_admin_snack_alert,
-        );
-      }
+      context.showSnackAlert(
+        context.locale.permission_admin_snack_alert,
+      );
     } else {
       if (!context.mounted) return;
 

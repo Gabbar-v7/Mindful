@@ -47,7 +47,7 @@
     "permission_vpn_info": "Please grant permission to create virtual private network (VPN) connection. This will enable Mindful to restrict internet access for designated applications by creating local on device VPN.",
     "permission_admin_title": "Admin",
     "permission_admin_info": "Administrative privileges are needed only for essential operations to ensure the app works properly and remains tamper-proof.",
-    "permission_admin_snack_alert": "Tamper protection can only be disabled during the selected time window.",
+    "permission_admin_snack_alert": "Tamper protection cannot be disabled.",
     "permission_admin_import_alert": "Database cannot be updated while tamper protection is enabled.",
     "permission_notification_access_title": "Notification Access",
     "permission_notification_access_info": "Please grant notification access permission. This will allow Mindful to organize your notifications and deliver them on your schedule.",
