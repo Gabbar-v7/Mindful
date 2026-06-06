@@ -38,8 +38,7 @@ class ShortsTimerChart extends ConsumerWidget {
 
   void _editAllowedTime(BuildContext context, WidgetRef ref) async {
     final isInvincibleRestricted = ref.read(parentalControlsProvider
-            .select((v) => v.isInvincibleModeOn && v.includeShortsTimer)) &&
-        !ref.read(parentalControlsProvider.notifier).isBetweenInvincibleWindow;
+        .select((v) => v.isInvincibleModeOn && v.includeShortsTimer));
 
     /// Check if restricted by invincible mode
     if (isInvincibleRestricted && allowedTimeSec >= 0) {
